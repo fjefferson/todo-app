@@ -1,9 +1,12 @@
-## Using
+# ToDo App
+A simple task application
+
+### Using
 - NodeJS
 - MongoDB
 - React
 
-## Dependencies
+### Dependencies
 - body-parser
 - express
 - mongoose
@@ -11,7 +14,7 @@
 - nodemon
 - pm2
 
-## Instalation
+### Instalation
 ```
 npm i
 ```
