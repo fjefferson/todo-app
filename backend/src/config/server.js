@@ -3,7 +3,7 @@ const express = require('express');
 const server = express();
 const cors = require('./cors.js');
 
-const port = 8080;
+const port = 3003;
 
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(bodyParser.json());

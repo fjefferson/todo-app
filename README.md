@@ -6,7 +6,12 @@ A simple task application
 - MongoDB
 - React
 
-### Dependencies
+### Instalation
+```
+npm i
+```
+
+### Backend Dependencies (Service:3003)
 - body-parser
 - express
 - mongoose
@@ -14,11 +19,36 @@ A simple task application
 - nodemon
 - pm2
 
-### Instalation
+### Backend Run
 ```
-npm i
+npm run dev
 ```
-### Run
+or
+```
+npm run prod
+```
+
+### Frontend Dependencies (App:8080)
+- axios
+- babel-core
+- babel-loader
+- babel-plugin-react-html-attrs
+- babel-plugin-transform-object-rest-spread
+- babel-preset-es2015
+- babel-preset-react
+- bootstrap
+- css-loader
+- extract-text-webpack-plugin
+- file-loader
+- font-awesome
+- react
+- react-dom
+- react-router
+- style-loader
+- webpack
+- webpack-dev-server
+
+### Frontend Run
 ```
 npm run dev
 ```
