@@ -17,7 +17,7 @@ module.exports = {
             modules: __dirname + '/node_modules'
         }
     },
-    plugins: [new ExtractText('css/app.css')],
+    plugins: [new ExtractText('app.css')],
     module: {
         loaders: [{
             test: /.js[x]?$/,

@@ -1,9 +1,14 @@
 import 'modules/bootstrap/dist/css/bootstrap.min.css';
 import 'modules/font-awesome/css/font-awesome.min.css';
 import React from 'react';
+import Menu from '../template/menu';
+import Footer from '../template/footer';
+import Routes from './routes';
 
-export default prop => (
+export default props => (
     <div className="container">
-        <h1>ToDo App</h1>
+        <Menu />
+        <Routes />
+        <Footer />
     </div>
 );
