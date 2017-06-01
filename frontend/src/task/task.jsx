@@ -13,7 +13,11 @@ export default class Task extends Component {
         this.state = this.newInstance();
 
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleDoneToggle = this.handleDoneToggle.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
         this.descriptionChange = this.descriptionChange.bind(this);
+
+        this.refreshList();
     }
 
     newInstance(){
@@ -21,6 +25,11 @@ export default class Task extends Component {
             description:"",
             list: []
         };
+    }
+
+    refreshList(){
+        Axios.get(`${URL}?sort=-createdAt`)
+            .then(response => this.setState({...this.state, description: "", list: response.data}));
     }
 
     descriptionChange(event){
@@ -36,17 +45,29 @@ export default class Task extends Component {
         }
 
         Axios.post(URL, {description})
-            .then(response => console.log(response));
+            .then(response => this.refreshList());
+    }
 
-        this.setState({...this.state, description: ""});
+    handleDoneToggle(item){
+        Axios.put(`${URL}/${item._id}`, {
+                ...item, 
+                done: !item.done, 
+                doneAt: item.done ? null : new Date()
+            })
+            .then(response => this.refreshList());
+    }
+
+    handleRemove(item){
+        Axios.delete(`${URL}/${item._id}`)
+            .then(response => this.refreshList());
     }
 
     render(){
         return (
             <div>
-                <PageHeader name="Task" small="Register" />
+                <PageHeader name="Task" small="Manager" />
                 <TaskForm handleAdd={this.handleAdd} descriptionChange={this.descriptionChange} description={this.state.description} />
-                <TaskList />
+                <TaskList list={this.state.list} handleDoneToggle={this.handleDoneToggle} handleRemove={this.handleRemove} />
             </div>
         );
     }

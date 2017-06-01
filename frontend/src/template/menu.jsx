@@ -4,7 +4,7 @@ export default props => (
     <nav className="navbar navbar-inverse bg-inverse">
         <div className="container">
             <div className="navbar-header">
-                <a className="navbar-brand" href="#/home">
+                <a className="navbar-brand" href="./">
                     <b><i className="fa fa-tasks"></i> ToDo App</b>
                 </a>
             </div>
