@@ -1,7 +1,4 @@
-.action .btn {
-    margin: 5px;
-}
+.action { white-space: nowrap; }
+    .action .btn { margin: 5px; }
 
-.done {
-    text-decoration: line-through;
-}
+.done { text-decoration: line-through; }

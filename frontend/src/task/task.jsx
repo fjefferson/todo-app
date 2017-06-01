@@ -17,19 +17,23 @@ export default class Task extends Component {
         this.handleRemove = this.handleRemove.bind(this);
         this.descriptionChange = this.descriptionChange.bind(this);
 
-        this.refreshList();
+        this.refreshLists();
     }
 
     newInstance(){
         return {
             description: "",
-            list: []
+            list: [],
+            doneList: [],
         };
     }
 
-    refreshList(){
-        Axios.get(`${URL}?sort=-createdAt`)
+    refreshLists(){
+        Axios.get(`${URL}?sort=-createdAt&done=false`)
             .then(response => this.setState({...this.state, description: "", list: response.data}));
+
+        Axios.get(`${URL}?sort=-createdAt&done=true`)
+            .then(response => this.setState({...this.state, description: "", doneList: response.data}));
     }
 
     descriptionChange(event){
@@ -45,7 +49,7 @@ export default class Task extends Component {
         }
 
         Axios.post(URL, {description})
-            .then(response => this.refreshList());
+            .then(response => this.refreshLists());
     }
 
     handleDoneToggle(item){
@@ -54,12 +58,12 @@ export default class Task extends Component {
                 done: !item.done, 
                 doneAt: item.done ? null : new Date()
             })
-            .then(response => this.refreshList());
+            .then(response => this.refreshLists());
     }
 
     handleRemove(item){
         Axios.delete(`${URL}/${item._id}`)
-            .then(response => this.refreshList());
+            .then(response => this.refreshLists());
     }
 
     render(){
@@ -67,7 +71,11 @@ export default class Task extends Component {
             <div>
                 <PageHeader name="Task" small="Manager" />
                 <TaskForm handleAdd={this.handleAdd} descriptionChange={this.descriptionChange} description={this.state.description} />
-                <TaskList list={this.state.list} handleDoneToggle={this.handleDoneToggle} handleRemove={this.handleRemove} />
+                
+                <div className="row">
+                    <TaskList title="ToDo" list={this.state.list} handleDoneToggle={this.handleDoneToggle} handleRemove={this.handleRemove} />
+                    <TaskList title="Done" cols="6" list={this.state.doneList} handleDoneToggle={this.handleDoneToggle} handleRemove={this.handleRemove} />
+                </div>
             </div>
         );
     }
