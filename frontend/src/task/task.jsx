@@ -22,7 +22,7 @@ export default class Task extends Component {
 
     newInstance(){
         return {
-            description:"",
+            description: "",
             list: []
         };
     }
