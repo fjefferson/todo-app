@@ -38,6 +38,7 @@ npm run prod
 - babel-preset-react
 - bootstrap
 - css-loader
+- dateformat
 - extract-text-webpack-plugin
 - file-loader
 - font-awesome
