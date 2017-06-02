@@ -17,7 +17,12 @@ module.exports = {
             modules: __dirname + '/node_modules'
         }
     },
-    plugins: [new ExtractText('app.css')],
+    plugins: [
+        new ExtractText('app.css'),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })],
     module: {
         loaders: [{
             test: /.js[x]?$/,
