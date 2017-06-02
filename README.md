@@ -37,7 +37,6 @@ npm run prod
 - babel-preset-es2015
 - babel-preset-react
 - bootstrap
-- bootstrap-slider
 - css-loader
 - dateformat
 - extract-text-webpack-plugin
