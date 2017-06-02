@@ -59,7 +59,7 @@ export default class Task extends Component {
         let description = this.state.description;
 
         if(description.length < 3){
-            this.info("The Description field must have 3 or more character!");
+            this.showInfo("The Description field must have 3 or more character!");
             return;
         }
 
@@ -86,7 +86,7 @@ export default class Task extends Component {
             .then(response => this.refreshLists(this.state.description));
     }
 
-    info(text){
+    showInfo(text){
         jQuery('#info .modal-body').text(text);
         jQuery('#info').modal('show');
     }
