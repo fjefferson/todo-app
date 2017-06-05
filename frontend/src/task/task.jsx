@@ -64,7 +64,7 @@ export default class Task extends Component {
         }
 
         Axios.post(URL, {description})
-            .then(response => this.refreshLists(this.state.description));
+            .then(response => this.refreshLists(''));
     }
 
     handleDoneToggle(item){
