@@ -1,6 +1,8 @@
 # ToDo App
 A simple task application
 
+![Preview Screenshot](https://github.com/raphaelbruno/todo-app/blob/master/preview.png)
+
 ### Using
 - NodeJS
 - MongoDB
