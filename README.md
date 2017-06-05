@@ -42,6 +42,8 @@ npm run prod
 - extract-text-webpack-plugin
 - file-loader
 - font-awesome
+- google-maps
+- jquery
 - react
 - react-dom
 - react-router
