@@ -1,12 +1,13 @@
 # ToDo App
 A simple task application
 
-![Preview Screenshot](https://github.com/raphaelbruno/todo-app/blob/master/preview.png)
+![Preview Screenshot](preview.png)
 
 ### Using
 - NodeJS
 - MongoDB
 - React
+- Redux
 
 ### Instalation
 ```
@@ -48,7 +49,9 @@ npm run prod
 - jquery
 - react
 - react-dom
+- react-redux
 - react-router
+- redux
 - style-loader
 - webpack
 - webpack-dev-server
