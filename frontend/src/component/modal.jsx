@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import If from '../component/if';
+import If from './if';
 
 export default class Modal extends Component {
     render(){

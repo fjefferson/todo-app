@@ -52,6 +52,9 @@ npm run prod
 - react-redux
 - react-router
 - redux
+- redux-multi
+- redux-promise
+- redux-thunk
 - style-loader
 - webpack
 - webpack-dev-server
