@@ -25,7 +25,7 @@ export const searchDone = (description = '') => {
     return (dispatch, getState) => {
         let description = getState().task.entity.description;
         let search = description ? `&description__regex=/${description}/gi` : '';
-        let uri = `${URL}?sort=-createdAt${search}`;
+        let uri = `${URL}?sort=-doneAt${search}`;
         Axios.get(`${uri}&done=true`)
             .then(response => dispatch({type: TASK_DONE_SEARCHED, payload: response.data}));
     }
