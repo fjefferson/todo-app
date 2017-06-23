@@ -7,7 +7,7 @@ export const TASK_ADDED = 'TASK_ADDED';
 export const TASK_REMOVED = 'TASK_REMOVED';
 export const TASK_DONE_TOGGLE = 'TASK_DONE_TOGGLE';
 
-const URL = 'http://localhost:3003/api/task';
+const URL = 'http://localhost:3000/api/task';
 
 export const changeEntity = (entity) => ({ type: TASK_ENTITY_CHANGED, payload: entity });
 

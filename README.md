@@ -14,7 +14,7 @@ A simple task application
 npm i
 ```
 
-### Backend Dependencies (Service:3003)
+### Backend Dependencies (Service:3000)
 - body-parser
 - express
 - mongoose
